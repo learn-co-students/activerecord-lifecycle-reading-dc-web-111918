@@ -1,3 +1,14 @@
+
+<%if @post.errors.any? %>
+<h3>My Edit:</h3>
+<ul>
+  <% @post.errors.messages.each do |e| %>
+
+    <li><%= e.second[0] %></li>
+  <% end %>
+  </ul>
+<% end %>
+
 <%= form_for(@post) do |f| %>
   <label>Post title:</label><br>
   <%= f.text_field :title %><br>
