@@ -1,3 +1,9 @@
+<%if @post.errors.any? %>
+  <% @post.errors.messages.each do |e| %>
+  <%= e.second[0] %>
+  <% end %>
+<% end %>
+
 <%= form_for(@post) do |f| %>
   <label>Post title:</label><br>
   <%= f.text_field :title %><br>
